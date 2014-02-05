@@ -3,6 +3,11 @@
 
     <string name="app_name">Schiffeversenken</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_ships">Hello Ships - MPi home</string>
+    <string name="hello_ships">Willkommen beim Schiffeversenken - hoffentlich die des Gegners :-)</string>
+    <string name="label_spieltyp">Spieltyp</string>
+    <string name="label_gegner">Gegner</string>
+    <string name="label_btn_start">Schlacht beginnen!</string>
+    <string name="label_btn_cfg">Configuration</string>
+
 
 </resources>
