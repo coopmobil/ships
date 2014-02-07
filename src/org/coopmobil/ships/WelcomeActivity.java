@@ -1,8 +1,12 @@
 package org.coopmobil.ships;
 
+
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class WelcomeActivity extends Activity {
 
@@ -18,5 +22,17 @@ public class WelcomeActivity extends Activity {
 		getMenuInflater().inflate(R.menu.welcome, menu);
 		return true;
 	}
+	
+	/**
+	 * Ermöglicht das Rufen von MPi_TryOutActivity. 
+	 * Bitte dies Activity bis auf weiteres ansprechen, damit ich testen kann.
+	 * 
+	 * @author MPi 
+	 */
+	public void onClickBeginButton(View view){
+		Intent intent = new Intent(WelcomeActivity.this, MPi_TryOutActivity.class);
+        startActivity(intent);
+	}
+			
 
 }
