@@ -7,17 +7,16 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+
 public class ShipFieldView extends android.view.View {
 	
 	private Paint mPaint;
+	private Canvas mCanvas;
 
 	public ShipFieldView(Context c) {
 		super(c);
-		// TODO Auto-generated constructor stub
-		
 		
 		mPaint = new Paint();
-	    
 	
 		mPaint.setStrokeWidth(5); 
 		mPaint.setColor(Color.BLUE);
@@ -31,26 +30,49 @@ public class ShipFieldView extends android.view.View {
 	    mPaint.setStrokeCap(Paint.Cap.ROUND);
 	  
 	    */
-		
 	}
 	
     @Override
     protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
+    
+    mCanvas = canvas;
+    String [][] field = ShipField.getInstance().getField(); // noch Dummywerte ...
+    
+    drawGrid();
 
-    for(int y=0; y < ShipField.size.height + 1; y++){ 
-	    for(int x=0; x < ShipField.size.width + 1; x++)
-	          canvas.drawLine(50 + x * 100, 50, 50 + x * 100, 50 + ShipField.size.height * 100, mPaint);    	
-        canvas.drawLine(50, 50 + 100 * y, 50 + ShipField.size.width * 100, 50 + 100 * y, mPaint);    	
-	    
-    }
  
-    //int y = ShipField.size.height; 
+/*
+ * todo ... 
+ * - Breite bzw. höhe der Activity bestimmen (kleinster Wert) darauf Rand, Feld, ..., Feld, Rand verteilen
+ * - Activity ohne Titelleiste (/)
+ * -- aber dafür Buttons rechst bzw. unten. 
+ * - Buchstaben bzw. Zahlen auf den Rand
+ * - DrawGrid greift auf GridDistances / GridCalculator zu (/)
+ */
     
 
    
 
 
-    }
+  }
+
+  private void drawGrid() {
+		int offSet = GridDistances.borderPixel;
+		int interSpace = GridDistances.interspacePixel;
+		
+		int maxX = GridDistances.gridFieldCount.width;
+		int maxY = GridDistances.gridFieldCount.height;
+		
+
+	    for(int y=0; y < maxY + 1; y++){ 
+		    for(int x=0; x < maxX + 1; x++)
+		          mCanvas.drawLine(offSet + x * interSpace, offSet, offSet + x * interSpace, offSet + maxY * interSpace, mPaint);  
+		    
+	        mCanvas.drawLine(offSet, offSet + y * interSpace, offSet + maxX * interSpace, offSet + y * interSpace, mPaint); 
+	    }
+	    	
+		
+  }
 
 }
