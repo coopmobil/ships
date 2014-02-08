@@ -1,6 +1,6 @@
 package org.coopmobil.ships;
 
-import org.coopmobil.ships.views.GridView;
+import org.coopmobil.ships.views.ShipFieldView;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,14 +8,14 @@ import android.os.Bundle;
 public class MPi_TryOutActivity extends Activity {
 	
 
-GridView gv ;   
+ShipFieldView gv ;   
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	
 		
-	    gv = new GridView(this);
+	    gv = new ShipFieldView(this);
 	    setContentView(gv);
 	}
 
