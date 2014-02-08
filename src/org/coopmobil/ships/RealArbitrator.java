@@ -13,22 +13,22 @@ public class RealArbitrator {
 		battleRule = gameSettings.getBattleRule();
 	}
 	
-	@Override
+
 	public FieldModel getOwnFieldModel() {
 		return ownGameField.getFieldModel();
 	}
 
-	@Override
+	
 	public FieldModel getEnemyFieldModel() {
 		return enemyGameField.getFieldModel();
 	}
 
-	@Override
+	
 	public void setEnemyGameField(GameField enemyGameField) {
 		this.enemyGameField = enemyGameField;
 	}
 
-	@Override
+
 	public FieldModel doOwnFieldClick(int horizontalCoordinate,
 			int verticalCoordinate) throws ClickNotAllowedException {
 		CellState newCellState;
@@ -50,7 +50,7 @@ public class RealArbitrator {
 		return ownGameField.getFieldModel();
 	}
 
-	@Override
+	
 	public CellState getOwnFieldClick(int horizontalCoordinate,
 			int verticalCoordinate) throws ClickNotAllowedException {
 		CellState newCellState = null;
@@ -70,7 +70,7 @@ public class RealArbitrator {
 		}
 		return newCellState;
 	}
-	@Override
+	
 	public FieldModel doEnemyFieldClick(int horizontalCoordinate,
 			int verticalCoordinate) throws ClickNotAllowedException {
 		CellState newCellState = CellState.EXPLODED_SHIP;// dummy
