@@ -2,9 +2,6 @@ package org.coopmobil.ships.views;
 
 import org.coopmobil.ships.ShipField;
 
-import android.app.Application;
-
-
 public class GridCalculator {
 	
 	private static int m_screenWidth = 0; 
@@ -16,7 +13,7 @@ public class GridCalculator {
 			m_screenWidth = screenWidth;
 			m_screenHeight = screenHeight;	
 			
-			ShipField theShipField = ShipField.getInstance(); // setzt im Zweifel die Größe des Feldes
+		ShipField theShipField = ShipField.getInstance(); // setzt im Zweifel die Größe des Feldes
 		/**
 		 *  Das Gitter ist Abhängig von 
 		 *  a) der Auflösung des Gerätes und
