@@ -28,7 +28,7 @@
             />
 
     <Spinner
-            android:id="@+id/spinner_spieltyp"
+            android:id="@+id/spinner_gametype"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/label_spieltyp"
@@ -38,11 +38,11 @@
         android:id="@+id/label_gegner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spinner_spieltyp"
+        android:layout_below="@id/spinner_gametype"
         android:layout_marginTop="20dp"
         android:text="@string/label_gegner" />
 
-    <Spinner android:id="@+id/spinner_gegner"
+    <Spinner android:id="@+id/spinner_opponent"
              android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/label_gegner"
@@ -53,17 +53,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_btn_cfg"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/spinner_opponent"
             android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
             />
 
     <Button
-        android:id="@+id/button_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:onClick="onClickBeginButton"
-        android:text="@string/label_btn_start" />
+            android:id="@+id/button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="onClickBeginButton"
+            android:text="@string/label_btn_start" />
+
+    <Button
+            android:id="@+id/button_mpi_try_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="onClickMPiTryOut"
+            android:text="@string/label_btn_mpi_start" />
 
 </RelativeLayout>
