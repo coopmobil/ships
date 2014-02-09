@@ -13,7 +13,7 @@ public class ShipField{
 	
 	public static ShipField getInstance(){
 		if(instance == null)
-			instance = new ShipField(new Dimension(6, 7)); // ausgelesen aus Config ... z. B.
+			instance = new ShipField(new Dimension(6, 6)); // ausgelesen aus Config ... z. B.
 		
 		return instance;
 	}
