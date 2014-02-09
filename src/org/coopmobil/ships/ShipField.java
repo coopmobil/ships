@@ -1,6 +1,6 @@
 package org.coopmobil.ships;
 
-import org.coopmobil.ships.views.GridDistances;
+import org.coopmobil.ships.views.GridCalculator;
 import org.coopmobil.util.Dimension;
 
 
@@ -20,7 +20,7 @@ public class ShipField{
 	
 	protected ShipField(Dimension size){
 		this.size = size;
-		GridDistances.gridFieldCount = size;
+		GridCalculator.setFieldSize(size);
 	}
  
 	public Dimension getSize(){

@@ -12,6 +12,7 @@ public class ShipFieldView extends android.view.View {
 	
 	private Paint mPaint;
 	private Canvas mCanvas;
+	private ShipField mShipFieldInstance = null;
 
 	public ShipFieldView(Context c) {
 		super(c);
@@ -20,6 +21,8 @@ public class ShipFieldView extends android.view.View {
 	
 		mPaint.setStrokeWidth(5); 
 		mPaint.setColor(Color.BLUE);
+		
+		mShipFieldInstance = ShipField.getInstance(); // setzt im Zweifel die Größe des Feldes
 		
 	/*
 	    mPaint.setAntiAlias(true);
@@ -36,12 +39,15 @@ public class ShipFieldView extends android.view.View {
     protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
     
+	//Gittergröße neu berechnen
+	GridCalculator.calculate(this.getWidth(), this.getHeight());
+    
     mCanvas = canvas;
-    String [][] field = ShipField.getInstance().getField(); // noch Dummywerte ...
+    String [][] field = mShipFieldInstance.getField(); // noch Dummywerte ...
     
     drawGrid();
-
- 
+    }
+  
 /*
  * todo ... 
  * - Breite bzw. höhe der Activity bestimmen (kleinster Wert) darauf Rand, Feld, ..., Feld, Rand verteilen
@@ -50,19 +56,14 @@ public class ShipFieldView extends android.view.View {
  * - Buchstaben bzw. Zahlen auf den Rand
  * - DrawGrid greift auf GridDistances / GridCalculator zu (/)
  */
-    
 
-   
-
-
-  }
 
   private void drawGrid() {
-		int offSet = GridDistances.borderPixel;
-		int interSpace = GridDistances.interspacePixel;
+		int offSet = GridCalculator.getBorderPixel();
+		int interSpace = GridCalculator.getInterspacePixel();
 		
-		int maxX = GridDistances.gridFieldCount.width;
-		int maxY = GridDistances.gridFieldCount.height;
+		int maxX = GridCalculator.getFieldSize().width;
+		int maxY = GridCalculator.getFieldSize().height;
 		
 
 	    for(int y=0; y < maxY + 1; y++){ 
@@ -71,8 +72,12 @@ public class ShipFieldView extends android.view.View {
 		    
 	        mCanvas.drawLine(offSet, offSet + y * interSpace, offSet + maxX * interSpace, offSet + y * interSpace, mPaint); 
 	    }
-	    	
-		
+	    
+	    // Kreuz malen
+	    mPaint.setColor(Color.GREEN);
+	    mCanvas.drawLine(offSet + 5, offSet + 5 , offSet + interSpace - 5, offSet + interSpace - 5, mPaint); 	
+	    mCanvas.drawLine(offSet + interSpace - 5, offSet + 5, offSet + 5, offSet + interSpace - 5, mPaint); 
+	    
   }
 
 }

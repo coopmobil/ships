@@ -19,6 +19,7 @@ ShipFieldView gv ;
 	
 		getActionBar().hide();
 		
+		/*
 	    DisplayMetrics displaymetrics = new DisplayMetrics();
 	    getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
 	    int screenHeight = displaymetrics.heightPixels;
@@ -26,7 +27,7 @@ ShipFieldView gv ;
 	    
 	    GridCalculator.init(screenWidth, screenHeight);
 	    System.out.println("screenHeight: " + screenHeight + " screenWidth: " + screenWidth);
-	
+	*/
 	    gv = new ShipFieldView(this);
 	    setContentView(gv);
 	}

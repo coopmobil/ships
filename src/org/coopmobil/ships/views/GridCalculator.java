@@ -1,43 +1,37 @@
 package org.coopmobil.ships.views;
 
 import org.coopmobil.ships.ShipField;
+import org.coopmobil.util.Dimension;
 
 public class GridCalculator {
 	
-	private static int m_screenWidth = 0; 
-	private static int m_screenHeight = 0;
+	//private static int mWidth = 0; 
+	//private static int mHeight = 0;
+	private static int mBorderPixel; // Pixel am Rand
+	public static int getBorderPixel() {	return mBorderPixel;	}
+
+	private static int mInterspacePixel; // Pixel Abstand
+	public static int getInterspacePixel() {	return mInterspacePixel;	}
 	
+	private static Dimension mFieldSize; // Anzahl der Felder im Feld (durch Config oder ShipField gesetzt)
+	public static Dimension getFieldSize() {	return  mFieldSize;	}
+	public static void setFieldSize(Dimension size) {	mFieldSize = size;	}
 	
-	public static void init(int screenWidth, int screenHeight) {
-		if(m_screenWidth == 0 || m_screenHeight == 0){
-			m_screenWidth = screenWidth;
-			m_screenHeight = screenHeight;	
+	/**
+	 *  Das Gitter ist Abhängig von 
+	 *  a) der Auflösung der View und
+	 *  b) von der Anzahl der Felder
+	 */
+	public static void calculate(int width, int height) {
 			
-		ShipField theShipField = ShipField.getInstance(); // setzt im Zweifel die Größe des Feldes
-		/**
-		 *  Das Gitter ist Abhängig von 
-		 *  a) der Auflösung des Gerätes und
-		 *  b) von der Anzahl der Felder
-		 */
-	
-			calculateGrid();
-		}
+		int interSpaceX = width / (mFieldSize.width +1);
+		int interSpaceY = height / (mFieldSize.height +1);
+		
+		System.out.println("calculate -- width: " + width + " height: " + height);
+		System.out.println("interSpaceX: " + interSpaceX + " interSpaceY: " + interSpaceY);
+		
+		mInterspacePixel = Math.min(interSpaceX, interSpaceY); 
+		mBorderPixel = mInterspacePixel / 2;
 	}
 
-	private static void calculateGrid() {
-			
-		int interSpaceX = m_screenWidth / (GridDistances.gridFieldCount.width +1);
-		int interSpaceY = m_screenHeight / (GridDistances.gridFieldCount.height +1);
-
-		 GridDistances.interspacePixel = Math.min(interSpaceX, interSpaceY); 
-		/*
-		 * int smallesSide = Math.min (m_screenWidth, m_screenHeight);
-		 int biggesDimension = Math.max(GridDistances.gridFieldCount.width, GridDistances.gridFieldCount.height);
-		 
-		 GridDistances.interspacePixel = smallesSide / (biggesDimension + 1);
-		 
-		 */
-	
-		 GridDistances.borderPixel = GridDistances.interspacePixel / 2;
-	}
 }
