@@ -11,7 +11,18 @@ public class GameFieldCell {
 		this.cellState = cellState;
 	}
 
-	
+/*	public int getImmage()
+	{
+		int imageInd;
+		if (cellState == CellState.EXPLODED_SHIP) {
+			imageInd = R.drawable.explosion;
+		} else if (cellState == CellState.SHIP) {
+			imageInd = R.drawable.ship;
+		} else {
+			imageInd = R.drawable.see;
+		}
+		return imageInd;
+	}*/
 	
 
 }

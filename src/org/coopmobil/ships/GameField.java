@@ -5,6 +5,19 @@ public class GameField  {
 	private int gameFieldSize;
 	private GameFieldMode mode;
 		
+	public GameField(int gameFieldSize)
+	{
+		this.gameFieldSize = gameFieldSize;
+		cellArray = new GameFieldCell[this.gameFieldSize][this.gameFieldSize];
+		for(int i=0;i<gameFieldSize;i++)
+		{
+			for(int j=0;j<gameFieldSize;j++)
+			{
+				cellArray[i][j] = new GameFieldCell();
+			}
+		}
+	}
+	
 	public int getGameFieldSize() {
 		return gameFieldSize;
 	}
@@ -17,11 +30,7 @@ public class GameField  {
 	public void setMode(GameFieldMode mode) {
 		this.mode = mode;
 	}
-	public GameField(int gameFieldSize)
-	{
-		this.gameFieldSize = gameFieldSize;
-		cellArray = new GameFieldCell[this.gameFieldSize][this.gameFieldSize];
-	}
+	
 	public GameFieldCell[][] getCellArray() {
 		return cellArray;
 	}
@@ -31,7 +40,7 @@ public class GameField  {
 	}
 
 	public FieldModel getFieldModel() {
-		FieldModel fieldModel = new FieldModel(cellArray.clone());
+		FieldModel fieldModel = new FieldModel(cellArray.clone(),mode);
 		return fieldModel;
 	}
 
