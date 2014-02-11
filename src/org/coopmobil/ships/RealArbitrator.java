@@ -1,6 +1,6 @@
 package org.coopmobil.ships;
 
-public class RealArbitrator {
+public class RealArbitrator implements Arbitrator {
 	private GameField ownGameField;
 	private GameField enemyGameField;
 	private Rule shipPlaceRule;
@@ -11,24 +11,28 @@ public class RealArbitrator {
 		enemyGameField = new GameField(gameSettings.getGameFieldSize());
 		shipPlaceRule = gameSettings.getShipPlaceRule();
 		battleRule = gameSettings.getBattleRule();
+		setGameFieldMode(GameFieldMode.SHIP_PLACING);
 	}
-	
-
+	public void setGameFieldMode(GameFieldMode gameMode)
+	{
+		ownGameField.setMode(gameMode);
+	}
+	@Override
 	public FieldModel getOwnFieldModel() {
 		return ownGameField.getFieldModel();
 	}
 
-	
+	@Override
 	public FieldModel getEnemyFieldModel() {
 		return enemyGameField.getFieldModel();
 	}
 
-	
+	@Override
 	public void setEnemyGameField(GameField enemyGameField) {
 		this.enemyGameField = enemyGameField;
 	}
 
-
+	@Override
 	public FieldModel doOwnFieldClick(int horizontalCoordinate,
 			int verticalCoordinate) throws ClickNotAllowedException {
 		CellState newCellState;
@@ -50,7 +54,7 @@ public class RealArbitrator {
 		return ownGameField.getFieldModel();
 	}
 
-	
+	@Override
 	public CellState getOwnFieldClick(int horizontalCoordinate,
 			int verticalCoordinate) throws ClickNotAllowedException {
 		CellState newCellState = null;
@@ -63,14 +67,16 @@ public class RealArbitrator {
 			} catch (OverrunningException ex) {
 				throw new ClickNotAllowedException();
 			}
+			setGameFieldMode(GameFieldMode.SHOT);
 		}
 
 		else {
 			throw new ClickNotAllowedException();
 		}
+		
 		return newCellState;
 	}
-	
+	@Override
 	public FieldModel doEnemyFieldClick(int horizontalCoordinate,
 			int verticalCoordinate) throws ClickNotAllowedException {
 		CellState newCellState = CellState.EXPLODED_SHIP;// dummy
@@ -83,6 +89,4 @@ public class RealArbitrator {
 		return enemyGameField.getFieldModel();
 	}
 
-		
-	}
-
+}
