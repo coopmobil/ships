@@ -3,8 +3,11 @@ package org.coopmobil.ships.views;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
+
 import org.coopmobil.ships.R;
 
 /**
@@ -16,6 +19,15 @@ public class BattlefieldActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battlefield);
     	getActionBar().hide();
+    	
+    	
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+	    getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+	    int screenHeight = displaymetrics.heightPixels;
+	    int screenWidth = displaymetrics.widthPixels;
+    	String outputTxt = Integer.toString(screenWidth) + " * " + Integer.toString(screenHeight);
+	    
+		Toast.makeText(getApplicationContext(), outputTxt, Toast.LENGTH_SHORT).show();    	
     }
 
 
