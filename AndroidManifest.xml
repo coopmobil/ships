@@ -24,7 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:theme="@style/AppBaseTheme" android:name="MPi_TryOutActivity"></activity>
         <activity android:name=".views.BattlefieldActivity" android:label="Spielfeld"/>
         <activity android:name=".views.VictoryCeremonyActivity" android:label="Siegerehrung"/>
     </application>
