@@ -11,9 +11,11 @@ import org.coopmobil.ships.R;
  * Created by Michael on 09.02.14.
  */
 public class BattlefieldActivity extends Activity {
-    public void onCreate(Bundle savedInstanceState) {
+    
+	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battlefield);
+    	getActionBar().hide();
     }
 
 

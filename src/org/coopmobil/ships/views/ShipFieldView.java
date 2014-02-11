@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 
 
 public class ShipFieldView extends android.view.View {
@@ -17,9 +18,7 @@ public class ShipFieldView extends android.view.View {
 	
 	private static String [] letterArra = {"", "A","B", "C", "D", "E", "F", "G", "H", "I"}; // mehr für größere Felder (maximal 9 x 9)
 
-	public ShipFieldView(Context c) {
-		super(c);
-		
+	private void init() {
 		mGridPaint = new Paint();
 		mGridPaint.setStrokeWidth(5); 
 		mGridPaint.setColor(Color.BLUE);
@@ -29,16 +28,16 @@ public class ShipFieldView extends android.view.View {
 		mTextPaint.setTextSize(30);
 		
 		mShipFieldInstance = ShipField.getInstance(); // setzt im Zweifel die Größe des Feldes
-		
-	/*
-	    mPaint.setAntiAlias(true);
-	    mPaint.setDither(true);
+	}
+	
+	public ShipFieldView(Context c, AttributeSet attr) {
+		super(c, attr);
 
-	    mPaint.setStyle(Paint.Style.STROKE);
-	    mPaint.setStrokeJoin(Paint.Join.ROUND);
-	    mPaint.setStrokeCap(Paint.Cap.ROUND);
-	  
-	    */
+		init();	
+	}
+
+	public ShipFieldView(Context c) {
+		this(c, null);
 	}
 	
     @Override
@@ -53,16 +52,6 @@ public class ShipFieldView extends android.view.View {
     
     drawGrid();
     }
-  
-/*
- * todo ... 
- * - Breite bzw. höhe der Activity bestimmen (kleinster Wert) darauf Rand, Feld, ..., Feld, Rand verteilen
- * - Activity ohne Titelleiste (/)
- * -- aber dafür Buttons rechst bzw. unten. 
- * - Buchstaben bzw. Zahlen auf den Rand
- * - DrawGrid greift auf GridDistances / GridCalculator zu (/)
- */
-
 
   private void drawGrid() {
 		int offSet = GridCalculator.getBorderPixel();
