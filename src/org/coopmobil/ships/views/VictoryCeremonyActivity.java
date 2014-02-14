@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import org.coopmobil.ships.R;
-import org.coopmobil.ships.WelcomeActivity;
+import org.coopmobil.ships.temp.WelcomeActivity;
 
 /**
  * Created by Michael on 09.02.14.

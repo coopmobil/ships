@@ -1,6 +1,6 @@
 package org.coopmobil.ships.views;
 
-import org.coopmobil.ships.ShipField;
+import org.coopmobil.ships.temp.ShipField;
 import org.coopmobil.util.Dimension;
 
 public class GridCalculator {
