@@ -10,12 +10,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import org.coopmobil.ships.Game;
 import org.coopmobil.ships.R;
 import org.coopmobil.ships.R.array;
 import org.coopmobil.ships.R.id;
 import org.coopmobil.ships.R.layout;
 import org.coopmobil.ships.R.menu;
+import org.coopmobil.ships.game.Game;
+import org.coopmobil.ships.game.GameType;
 import org.coopmobil.ships.views.BattlefieldActivity;
 
 public class WelcomeActivity extends Activity {
@@ -47,7 +48,7 @@ public class WelcomeActivity extends Activity {
     public void onClickBeginButton(View view){
 		Intent intent = new Intent(this, BattlefieldActivity.class);
 
-		Game.getInstance().init();
+		Game.getInstance().init(GameType.SIMPLE);
 		
 		startActivity(intent);
 	}

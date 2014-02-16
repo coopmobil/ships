@@ -1,4 +1,4 @@
-package org.coopmobil.ships.temp;
+package org.coopmobil.ships.gamefield;
 
 import org.coopmobil.ships.gamefield.CellState;
 

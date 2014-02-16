@@ -1,4 +1,4 @@
-package org.coopmobil.ships.temp;
+package org.coopmobil.ships.ruler;
 
 public class OverrunningException  extends Exception {
 	/**

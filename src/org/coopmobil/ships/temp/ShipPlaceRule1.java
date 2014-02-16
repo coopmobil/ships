@@ -1,6 +1,8 @@
 package org.coopmobil.ships.temp;
 
 import org.coopmobil.ships.gamefield.CellState;
+import org.coopmobil.ships.gamefield.GameFieldMode;
+import org.coopmobil.ships.ruler.Rule;
 
 public class ShipPlaceRule1 implements Rule {
 

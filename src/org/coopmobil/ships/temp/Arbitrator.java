@@ -1,6 +1,7 @@
 package org.coopmobil.ships.temp;
 
 import org.coopmobil.ships.gamefield.CellState;
+import org.coopmobil.ships.gamefield.GameField;
 
 public interface Arbitrator {
 	

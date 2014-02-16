@@ -1,6 +1,7 @@
-package org.coopmobil.ships.temp;
+package org.coopmobil.ships.gamefield;
 
-import org.coopmobil.ships.gamefield.CellState;
+import org.coopmobil.ships.ruler.OverrunningException;
+
 
 public class GameField  {
 	private GameFieldCell [][] cellArray;
@@ -41,11 +42,7 @@ public class GameField  {
 		this.cellArray = cellArray;
 	}
 
-	public FieldModel getFieldModel() {
-		FieldModel fieldModel = new FieldModel(cellArray.clone(),mode);
-		return fieldModel;
-	}
-
+	
 		
 	public void setNewCellState (int horizontalCoordinate,int verticalCoordinate,CellState newState)
 	throws OverrunningException

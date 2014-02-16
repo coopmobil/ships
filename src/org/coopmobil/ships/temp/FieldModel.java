@@ -1,6 +1,8 @@
 package org.coopmobil.ships.temp;
 
 import org.coopmobil.ships.gamefield.CellState;
+import org.coopmobil.ships.gamefield.GameFieldCell;
+import org.coopmobil.ships.gamefield.GameFieldMode;
 
 public class FieldModel {
 
