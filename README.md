@@ -4,11 +4,20 @@ ships
 Schiffeversenken
 
 
-- ES: Git ist bei mir irgendwie schief gegangen. 
-Ich kann nicht normales Projekt clonen. Ich commite, was ich kann, bin aber nicht sicher
-,ob es funktioniert.
-Hauptobjekt RealArbitrator. Es muss mit GetSettings kreiert sein. Es wird nach jedem Klick gerufen 
-RealArbitrator.doOwnFieldClick(int horizontalCoordinate,int verticalCoordinate). Dabei wird FieldModel geliefert 
-oder ClickNotAllowedException.
+- ES: 
 
-- MPi: Readme zusmmengeführt
+- MPi:
+-- positionierung der Schrift an Seitenverhältnisse angepasst
+-- Verfügbare Schiffe werden gezeichnet (Im mode PLACEMENT)
+--- momentan noch dummyTexte
+-- PlacementRulerSimple verwendet
+-- grobe Anzeige
+-- neu Methode 	int getBiggestShip() bei PlacementRuler
+-- Schiffe verwenden  cellCoordinates von RealShip 
+- 	public String getName(); bei Ship
+
+*Vorschlag*
+- Ship sollte Abstrakte Klasse werden, dann ist RealShip ohne Bedeutung
+
+
+- MGr:

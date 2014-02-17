@@ -23,6 +23,9 @@ public class OneMaster extends RealShip  {
 		return relativeCellCoordinates;
 	}
 	
-	
+	@Override
+	public String getName(){
+		return "U-Boot";
+	}	
 
 }

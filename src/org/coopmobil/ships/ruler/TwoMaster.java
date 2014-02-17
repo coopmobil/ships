@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import org.coopmobil.ships.gamefield.CellCoordinate;
 
 public class TwoMaster extends RealShip {
-
-	private ArrayList<CellCoordinate> cellCoordinates = null;
 	
 	public TwoMaster()
 	{
@@ -31,5 +29,8 @@ public class TwoMaster extends RealShip {
 		return relativeCellCoordinates;
 	}
 	
-
+	@Override
+	public String getName(){
+		return "Zerstörer";
+	}
 }

@@ -9,4 +9,5 @@ public interface Ship {
 	public ArrayList<ArrayList<CellCoordinate>> getRelativePosition(CellCoordinate startCell);
 	public int getOccupiedCells();
 	public  boolean isShipOfMyKind(ArrayList<CellCoordinate> cells);
+	public String getName();
 }

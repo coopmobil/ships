@@ -6,7 +6,6 @@ import org.coopmobil.ships.gamefield.CellCoordinate;
 
 public class ThreeMaster extends RealShip {
 
-	private ArrayList<CellCoordinate> cellCoordinates = null;
 	
 	public ThreeMaster()
 	{
@@ -34,5 +33,8 @@ public class ThreeMaster extends RealShip {
 		return relativeCellCoordinates;
 	}
 	
-
+	@Override
+	public String getName(){
+		return "Kreuzer";
+	}
 }

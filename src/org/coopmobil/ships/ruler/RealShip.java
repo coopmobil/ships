@@ -58,5 +58,10 @@ public class RealShip implements Ship {
 		}
 		return shipOfMyKind;
 	}
+	
+	@Override
+	public String getName(){
+		return "RealShip";
+	}
 
 }

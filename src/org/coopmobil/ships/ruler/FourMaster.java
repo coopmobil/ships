@@ -6,7 +6,6 @@ import org.coopmobil.ships.gamefield.CellCoordinate;
 
 public class FourMaster extends RealShip {
 
-	private ArrayList<CellCoordinate> cellCoordinates = null;
 	
 	public FourMaster()
 	{
@@ -35,6 +34,11 @@ public class FourMaster extends RealShip {
 		cellCoordinates.add(new CellCoordinate(startCell.getHorizontalCoordinate() + 3,startCell.getVerticalCoordinate()));
 		relativeCellCoordinates.add(cellCoordinates);
 		return relativeCellCoordinates;
+	}
+	
+	@Override
+	public String getName(){
+		return "Schlachtschiff";
 	}
 	
 }

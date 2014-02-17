@@ -84,4 +84,12 @@ public class PlacementRulerSimple implements PlacementRuler {
 	public int getGameFieldSize() {
 		return gameFieldSize;
 	};
+	
+	// MPi neu
+	@Override
+	public int getBiggestShip(){
+		// TODO Auto-generated method stub
+		return new FourMaster().getOccupiedCells();		
+	}
+
 }

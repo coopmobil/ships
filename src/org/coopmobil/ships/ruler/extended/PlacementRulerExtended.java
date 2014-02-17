@@ -36,5 +36,11 @@ public class PlacementRulerExtended implements PlacementRuler {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	// MPi neu
+	@Override
+	public int getBiggestShip(){
+		// TODO Auto-generated method stub
+		return 0;		
+	}
 }
