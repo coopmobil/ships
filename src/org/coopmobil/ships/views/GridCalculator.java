@@ -24,8 +24,13 @@ public class GridCalculator {
 	 */
 	public static void calculate(int width, int height) {
 			
-		int interSpaceX = width / (mFieldSize.width +1);
-		int interSpaceY = height / (mFieldSize.height +1);
+		int interSpaceX = width / (mFieldSize.width + 1);
+	    int interSpaceY;
+	    
+	    if(height > width)
+	    	interSpaceY = height / (mFieldSize.height + 1 + 5); //5 für die Textzeilen (noch Festwert)
+	    else
+	    	interSpaceY = height / (mFieldSize.height + 1);
 		
 		System.out.println("calculate -- width: " + width + " height: " + height);
 		System.out.println("interSpaceX: " + interSpaceX + " interSpaceY: " + interSpaceY);

@@ -15,7 +15,7 @@ import org.coopmobil.ships.ruler.TwoMaster;
 
 public class PlacementRulerSimple implements PlacementRuler {
 
-	int gameFieldSize = 10;
+	int gameFieldSize = 6;//10;
 	int oneMasterMaxCount = 4;
 	int twoMasterMaxCount = 3;
 	int threeMasterMaxCount = 2;
