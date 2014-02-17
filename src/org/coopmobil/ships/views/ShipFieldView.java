@@ -20,12 +20,11 @@ public class ShipFieldView extends android.view.View {
 
 	private void init() {
 		mGridPaint = new Paint();
-		mGridPaint.setStrokeWidth(5); 
+		 
 		mGridPaint.setColor(Color.BLUE);
 		
 		mTextPaint = new Paint();
 		mTextPaint.setColor(Color.BLACK);
-		mTextPaint.setTextSize(30);
 		
 		mShipFieldInstance = ShipField.getInstance(); // setzt im Zweifel die Größe des Feldes
 	}
@@ -47,6 +46,9 @@ public class ShipFieldView extends android.view.View {
 	//Gittergröße neu berechnen
 	GridCalculator.calculate(this.getWidth(), this.getHeight());
     
+	mGridPaint.setStrokeWidth(GridCalculator.getBorderPixel() / 8);
+	mTextPaint.setTextSize(Math.round(GridCalculator.getBorderPixel() * 0.9));
+	
     mCanvas = canvas;
     String [][] field = mShipFieldInstance.getField(); // noch Dummywerte ...
     
@@ -65,12 +67,12 @@ public class ShipFieldView extends android.view.View {
 		    for(int x=0; x < maxX + 1; x++){
 		          mCanvas.drawLine(offSet + x * interSpace, offSet, offSet + x * interSpace, offSet + maxY * interSpace, mGridPaint);  
 		          if(y == 0 && x != 0)
-		        	  mCanvas.drawText(Integer.toString(x), x * interSpace, Math.round(offSet / 1.5), mTextPaint);
+		        	  mCanvas.drawText(Integer.toString(x), x * interSpace, Math.round(0.7 * offSet), mTextPaint);
 		        	  
 		    }
 		    
 	        mCanvas.drawLine(offSet, offSet + y * interSpace, offSet + maxX * interSpace, offSet + y * interSpace, mGridPaint); 
-        	mCanvas.drawText(letterArra[y], Math.round(offSet / 2.5), y * interSpace, mTextPaint);
+        	mCanvas.drawText(letterArra[y], Math.round(0.3 * offSet) , y * interSpace, mTextPaint);
 
 	    }
 	    
