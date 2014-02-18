@@ -2,13 +2,12 @@ package org.coopmobil.ships.views;
 
 import java.util.ArrayList;
 
-import org.coopmobil.ships.game.GameType;
+import org.coopmobil.ships.util.GameType;
 import org.coopmobil.ships.ruler.PlacementRuler;
 import org.coopmobil.ships.ruler.PlacementRulerFactory;
 import org.coopmobil.ships.ruler.Ship;
-import org.coopmobil.util.Dimension;
+import org.coopmobil.ships.util.Dimension;
 
-import android.R.integer;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
@@ -27,7 +26,7 @@ public class BattlefieldView extends android.view.View {
 	
 	private BattlefieldMode mode = BattlefieldMode.PLACEMENT;
 	
-	private static String [] letterArra = {"", "A","B", "C", "D", "E", "F", "G", "H", "I", "J"}; // mehr für größere Felder (maximal 10 x 10)
+	private static String [] letterArra = {"", "A","B", "C", "D", "E", "F", "G", "H", "I", "J"}; // mehr fï¿½r grï¿½ï¿½ere Felder (maximal 10 x 10)
 
 
     public BattlefieldMode getMode()	{	return mode;	}
@@ -43,7 +42,7 @@ public class BattlefieldView extends android.view.View {
 		
 		mPlacementRuler = PlacementRulerFactory.getRuler(GameType.SIMPLE);
 		GridCalculator.setFieldSize(new Dimension(mPlacementRuler.getGameFieldSize(), mPlacementRuler.getGameFieldSize()));
-	//	mShipFieldInstance = ShipField.getInstance(); // setzt im Zweifel die Größe des Feldes
+	//	mShipFieldInstance = ShipField.getInstance(); // setzt im Zweifel die Grï¿½ï¿½e des Feldes
 	}
 	
 	public BattlefieldView(Context c, AttributeSet attr) {
@@ -60,7 +59,7 @@ public class BattlefieldView extends android.view.View {
     protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
     
-	//Gittergröße neu berechnen
+	//Gittergrï¿½ï¿½e neu berechnen
   
 	GridCalculator.calculate(this.getWidth(), this.getHeight());
     
@@ -117,7 +116,7 @@ public class BattlefieldView extends android.view.View {
       		yOffSet = GridCalculator.getInterspacePixel();
     	}
     	
-    	mCanvas.drawText("noch mögliche Schiffe:", xOffSet, yOffSet, mTextPaint);
+    	mCanvas.drawText("noch mï¿½gliche Schiffe:", xOffSet, yOffSet, mTextPaint);
     	ArrayList<Ship> ships = mPlacementRuler.getShipList();
     	
     	for(int row = 0; row < mPlacementRuler.getBiggestShip(); row++){

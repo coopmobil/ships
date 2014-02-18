@@ -1,4 +1,4 @@
-package org.coopmobil.util;
+package org.coopmobil.ships.util;
 
 
 

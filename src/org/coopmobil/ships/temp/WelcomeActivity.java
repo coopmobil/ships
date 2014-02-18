@@ -16,7 +16,7 @@ import org.coopmobil.ships.R.id;
 import org.coopmobil.ships.R.layout;
 import org.coopmobil.ships.R.menu;
 import org.coopmobil.ships.game.Game;
-import org.coopmobil.ships.game.GameType;
+import org.coopmobil.ships.util.GameType;
 import org.coopmobil.ships.views.BattlefieldActivity;
 
 public class WelcomeActivity extends Activity {
