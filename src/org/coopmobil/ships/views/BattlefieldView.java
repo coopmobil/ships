@@ -1,6 +1,8 @@
 package org.coopmobil.ships.views;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import org.coopmobil.ships.util.GameType;
 import org.coopmobil.ships.ruler.PlacementRuler;
@@ -16,7 +18,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 
 
-public class BattlefieldView extends android.view.View {
+public class BattlefieldView extends android.view.View  implements Observer{
 	
 	private Paint mGridPaint;
 	private Paint mTextPaint;
@@ -59,7 +61,7 @@ public class BattlefieldView extends android.view.View {
     protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
     
-	//Gittergrï¿½ï¿½e neu berechnen
+	//Gittergröße neu berechnen
   
 	GridCalculator.calculate(this.getWidth(), this.getHeight());
     
@@ -136,6 +138,14 @@ public class BattlefieldView extends android.view.View {
     		
     	 	mCanvas.drawText(shipText, xOffSet, yOffSet + (row + 1) * GridCalculator.getInterspacePixel(), mTextPaint); 		
     	}
-    		
+    }
+    
+    public void update(Observable shipDataModel, java.lang.Object shipList){
+    	/**
+    	 * TODO 	mach irgendwas vor dem Zeichene mit shipDataModel bzw. shipList - noch nicht klar,
+    	 * 			ob shipList oder Nachricht vom Observable
+    	 */
+    	
+    	this.invalidate();
     }
 }

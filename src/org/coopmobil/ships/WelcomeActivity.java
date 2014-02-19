@@ -46,8 +46,6 @@ public class WelcomeActivity extends Activity {
 
     public void onClickBeginButton(View view){
 		Intent intent = new Intent(this, BattlefieldActivity.class);
-
-		Game.getInstance().init(GameType.SIMPLE);
 		
 		startActivity(intent);
 	}

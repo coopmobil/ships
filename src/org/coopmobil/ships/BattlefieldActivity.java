@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.coopmobil.ships.R;
+import org.coopmobil.ships.game.Game;
+import org.coopmobil.ships.util.GameType;
 import org.coopmobil.ships.views.BattlefieldView;
 
 /**
@@ -33,8 +35,10 @@ public class BattlefieldActivity extends Activity {
 	    
 		Toast.makeText(getApplicationContext(), outputTxt, Toast.LENGTH_SHORT).show();  
 		*/
-    	if (battlefielView == null)
+    	if (battlefielView == null){
     		battlefielView = (BattlefieldView) findViewById(R.id.battleFieldView1);
+    		Game.getInstance().init(GameType.SIMPLE, battlefielView);
+    	}
     }
 
 
