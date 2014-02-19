@@ -1,6 +1,6 @@
 package org.coopmobil.ships.ruler;
 
-import org.coopmobil.ships.game.GameType;
+import org.coopmobil.ships.util.GameType;
 import org.coopmobil.ships.ruler.extended.PlacementRulerExtended;
 import org.coopmobil.ships.ruler.simple.PlacementRulerSimple;
 

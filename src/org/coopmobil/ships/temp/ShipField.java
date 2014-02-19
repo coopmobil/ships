@@ -1,7 +1,7 @@
 package org.coopmobil.ships.temp;
 
 import org.coopmobil.ships.views.GridCalculator;
-import org.coopmobil.util.Dimension;
+import org.coopmobil.ships.util.Dimension;
 
 
 

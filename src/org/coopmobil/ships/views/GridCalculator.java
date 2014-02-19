@@ -1,7 +1,6 @@
 package org.coopmobil.ships.views;
 
-import org.coopmobil.ships.temp.ShipField;
-import org.coopmobil.util.Dimension;
+import org.coopmobil.ships.util.Dimension;
 
 public class GridCalculator {
 	
@@ -18,8 +17,8 @@ public class GridCalculator {
 	public static void setFieldSize(Dimension size) {	mFieldSize = size;	}
 	
 	/**
-	 *  Das Gitter ist Abhängig von 
-	 *  a) der Auflösung der View und
+	 *  Das Gitter ist Abhï¿½ngig von 
+	 *  a) der Auflï¿½sung der View und
 	 *  b) von der Anzahl der Felder
 	 */
 	public static void calculate(int width, int height) {

@@ -1,7 +1,7 @@
 
 package org.coopmobil.ships.ruler;
 
-import org.coopmobil.ships.game.GameType;
+import org.coopmobil.ships.util.GameType;
 import org.coopmobil.ships.ruler.extended.BattleRulerExtended;
 import org.coopmobil.ships.ruler.simple.BattleRulerSimple;
 

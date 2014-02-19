@@ -14,6 +14,7 @@ import org.coopmobil.ships.ruler.BattleRulerFactory;
 import org.coopmobil.ships.ruler.PlacementNotAllowed;
 import org.coopmobil.ships.ruler.PlacementRuler;
 import org.coopmobil.ships.ruler.PlacementRulerFactory;
+import org.coopmobil.ships.util.GameType;
 
 public class Game {
 	private List <Player> players = null;
