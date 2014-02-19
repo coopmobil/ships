@@ -1,12 +1,12 @@
-package org.coopmobil.ships.views;
+package org.coopmobil.ships;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+
 import org.coopmobil.ships.R;
-import org.coopmobil.ships.temp.WelcomeActivity;
 
 /**
  * Created by Michael on 09.02.14.

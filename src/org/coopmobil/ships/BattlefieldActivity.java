@@ -1,4 +1,4 @@
-package org.coopmobil.ships.views;
+package org.coopmobil.ships;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.coopmobil.ships.R;
+import org.coopmobil.ships.views.BattlefieldView;
 
 /**
  * Created by Michael on 09.02.14.

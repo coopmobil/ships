@@ -116,7 +116,7 @@ public class BattlefieldView extends android.view.View {
       		yOffSet = GridCalculator.getInterspacePixel();
     	}
     	
-    	mCanvas.drawText("noch mï¿½gliche Schiffe:", xOffSet, yOffSet, mTextPaint);
+    	mCanvas.drawText("noch mögliche Schiffe:", xOffSet, yOffSet, mTextPaint);
     	ArrayList<Ship> ships = mPlacementRuler.getShipList();
     	
     	for(int row = 0; row < mPlacementRuler.getBiggestShip(); row++){
@@ -138,5 +138,4 @@ public class BattlefieldView extends android.view.View {
     	}
     		
     }
-
 }

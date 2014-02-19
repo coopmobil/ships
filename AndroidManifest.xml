@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="org.coopmobil.ships.temp.WelcomeActivity"
+            android:name="org.coopmobil.ships.WelcomeActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask">
 
@@ -24,8 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.BattlefieldActivity" android:label="Spielfeld"/>
-        <activity android:name=".views.VictoryCeremonyActivity" android:label="Siegerehrung"/>
+        <activity android:name="org.coopmobil.ships.BattlefieldActivity" android:label="Spielfeld"/>
+        <activity android:name="org.coopmobil.ships.VictoryCeremonyActivity" android:label="Siegerehrung"/>
     </application>
 
 </manifest>

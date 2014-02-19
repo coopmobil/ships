@@ -1,4 +1,4 @@
-package org.coopmobil.ships.temp;
+package org.coopmobil.ships;
 
 
 
@@ -17,7 +17,6 @@ import org.coopmobil.ships.R.layout;
 import org.coopmobil.ships.R.menu;
 import org.coopmobil.ships.game.Game;
 import org.coopmobil.ships.util.GameType;
-import org.coopmobil.ships.views.BattlefieldActivity;
 
 public class WelcomeActivity extends Activity {
 
