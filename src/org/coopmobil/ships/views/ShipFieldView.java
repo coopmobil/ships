@@ -1,7 +1,5 @@
 package org.coopmobil.ships.views;
 
-import org.coopmobil.ships.ShipField;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;

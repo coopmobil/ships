@@ -1,4 +1,4 @@
-package org.coopmobil.ships;
+package org.coopmobil.ships.activities;
 
 import org.coopmobil.ships.views.GridCalculator;
 import org.coopmobil.ships.views.ShipFieldView;

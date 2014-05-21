@@ -1,4 +1,4 @@
-package org.coopmobil.ships;
+package org.coopmobil.ships.views;
 
 public class ClickNotAllowedException extends Exception{
 	
