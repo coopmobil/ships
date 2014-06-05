@@ -23,11 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.MPi_TryOutActivity"
-            android:theme="@style/AppBaseTheme" >
-        </activity>
-        <activity
+           <activity
             android:name=".activities.BattlefieldActivity"
             android:label="Spielfeld" />
         <activity

@@ -42,17 +42,6 @@ public class WelcomeActivity extends Activity {
 		return true;
 	}
 	
-	/**
-	 * Erm�glicht das Rufen von MPi_TryOutActivity. 
-	 * Bitte dies Activity bis auf weiteres ansprechen, damit ich testen kann.
-	 * 
-	 * @author MPi 
-	 */
-    public void onClickMPiTryOut(View view){
-        Intent intent = new Intent(WelcomeActivity.this, MPi_TryOutActivity.class);
-        startActivity(intent);
-    }
-
 
     public void onClickBeginButton(View view){
 		Intent intent = new Intent(this, BattlefieldActivity.class);

@@ -7,7 +7,7 @@
     <string name="label_spieltyp">Spieltyp</string>
     <string name="label_gegner">Gegner</string>
     <string name="label_btn_start">Schlacht beginnen!</string>
-    <string name="label_btn_mpi_start">MPi_TryOut</string>
+
     <string name="label_btn_cfg">Configuration</string>
 
     <string name="label_btn_bg_victory_ceremony">Zur Siegerehrung</string>

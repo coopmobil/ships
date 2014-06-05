@@ -66,14 +66,4 @@
             android:layout_alignParentRight="true"
             android:onClick="onClickBeginButton"
             android:text="@string/label_btn_start" />
-
-    <Button
-            android:id="@+id/button_mpi_try_out"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:onClick="onClickMPiTryOut"
-            android:text="@string/label_btn_mpi_start" />
-
 </RelativeLayout>
