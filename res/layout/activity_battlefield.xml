@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/org.coopmobil.ships"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                
-    <GridView
+    <org.coopmobil.ships.views.SpielfeldGridView
         android:id="@+id/gridview"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:columnWidth="90dp"
         android:gravity="center"
         android:horizontalSpacing="10dp"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp" />
+        android:verticalSpacing="10dp"
+        custom:typ="platzierung" />
 
-    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:id="@+id/button_victory_ceremony"
-            android:text="@string/label_btn_bg_victory_ceremony"
-            android:onClick="onVictoryCeremony"/>
+    <Button
+        android:id="@+id/button_victory_ceremony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:onClick="onVictoryCeremony"
+        android:text="@string/label_btn_bg_victory_ceremony" />
 
-</RelativeLayout>
+</LinearLayout>

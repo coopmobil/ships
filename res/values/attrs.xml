@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <declare-styleable name="SpielfeldGridView">
+       
+       <!--  <attr name="spalten" format="integer" />  -->
+       <attr name="typ" format="enum">
+           <enum name="platzierung" value="0"/>
+           <enum name="eigene_flotte" value="1"/>
+           <enum name="gegner_flotte" value="2"/>
+       </attr>
+   </declare-styleable>
+</resources>
