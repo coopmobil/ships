@@ -11,5 +11,8 @@ public class SpielfeldGridView extends GridView {
 		// TODO Auto-generated constructor stub
 	}
 
-
+	public SpielfeldGridView(Context context) {
+		this(context, null); // Konstruktor für den Layout-Designer (Graphical Layout)
+	}
+	
 }

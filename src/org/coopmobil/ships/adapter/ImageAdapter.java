@@ -3,6 +3,7 @@ package org.coopmobil.ships.adapter;
 import org.coopmobil.ships.R;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -40,38 +41,42 @@ public class ImageAdapter extends BaseAdapter {
 
 		int y = position / m;
 		int x = position - y * m;
+		TextView tv;
 
 		if (x == 0 && y > 0) {
-			TextView t = new TextView(mContext);
-			char[] c = new char[1];
-			c[0] = (char) ('A' + (y - 1));
-			t.setText(new String(c));
-			t.setTextSize(24);
-
-			return t;
+			tv = getNewTextView((char) ('A' + (y - 1)));
+	
+			return tv;
 		}
 		if (y == 0 && x > 0) {
-			TextView t = new TextView(mContext);
-			char[] c = new char[1];
-			c[0] = (char) ('1' + (x - 1));
-			t.setText(new String(c));
-			t.setTextSize(24);
-
-			return t;
-
+			tv = getNewTextView((char) ('1' + (x - 1)));
+			
+			return tv;
 		}
 		if (x == 0 && y == 0) {
-			TextView t = new TextView(mContext);
-			return t;
+			tv = getNewTextView((char)' ');
+			return tv;
 			
 		} else {
 			ImageView imageView = new ImageView(mContext);
-			imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+			imageView.setLayoutParams(new GridView.LayoutParams(150, 100));
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-			imageView.setPadding(8, 8, 8, 8);
+			//imageView.setPadding(8, 8, 8, 8);
 			//imageView.setImageResource(mThumbIds[position % mThumbIds.length]);
 			return imageView;
 		}
+	}
+
+	private TextView getNewTextView(char c) {
+		TextView tv = new TextView(mContext);
+		char[] cField = new char[1];
+		cField[0] = c;
+		tv.setText(new String(cField));
+		tv.setTextSize(24);
+		tv.setPadding(0, 0, 0, 0);
+		tv.setGravity(Gravity.CENTER);
+		
+		return tv;
 	}
 
 	// references to our images
