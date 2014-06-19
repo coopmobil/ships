@@ -3,6 +3,7 @@ package org.coopmobil.ships.adapter;
 import org.coopmobil.ships.R;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,7 @@ public class ImageAdapter extends BaseAdapter {
 
 	// create a new ImageView for each item referenced by the Adapter
 	public View getView(int position, View convertView, ViewGroup parent) {
-
+		final int fieldSizeInPx = 84;
 		if (convertView != null) {
 			return convertView;
 		}
@@ -45,24 +46,29 @@ public class ImageAdapter extends BaseAdapter {
 
 		if (x == 0 && y > 0) {
 			tv = getNewTextView((char) ('A' + (y - 1)));
-	
+			tv.setBackgroundColor(Color.WHITE);
+			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
 			return tv;
 		}
 		if (y == 0 && x > 0) {
 			tv = getNewTextView((char) ('1' + (x - 1)));
-			
+			tv.setBackgroundColor(Color.WHITE);
+			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
 			return tv;
 		}
 		if (x == 0 && y == 0) {
-			tv = getNewTextView((char)' ');
+			tv = getNewTextView((char) ' ');
+			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
+			tv.setBackgroundColor(Color.WHITE);
 			return tv;
-			
+
 		} else {
 			ImageView imageView = new ImageView(mContext);
-			imageView.setLayoutParams(new GridView.LayoutParams(150, 100));
+			imageView.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-			//imageView.setPadding(8, 8, 8, 8);
-			//imageView.setImageResource(mThumbIds[position % mThumbIds.length]);
+			// imageView.setPadding(8, 8, 8, 8);
+			// imageView.setImageResource(mThumbIds[position %
+			// mThumbIds.length]);
 			return imageView;
 		}
 	}
@@ -75,7 +81,7 @@ public class ImageAdapter extends BaseAdapter {
 		tv.setTextSize(24);
 		tv.setPadding(0, 0, 0, 0);
 		tv.setGravity(Gravity.CENTER);
-		
+
 		return tv;
 	}
 
