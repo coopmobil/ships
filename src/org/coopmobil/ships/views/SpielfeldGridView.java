@@ -8,6 +8,10 @@ public class SpielfeldGridView extends GridView {
 
 	public SpielfeldGridView(Context context, AttributeSet attributes) {
 		super(context, attributes);
+
+		setColumnWidth(168);
+	
+		
 		// TODO Auto-generated constructor stub
 	}
 

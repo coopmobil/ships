@@ -35,7 +35,7 @@ public class ImageAdapter extends BaseAdapter {
 
 	// create a new ImageView for each item referenced by the Adapter
 	public View getView(int position, View convertView, ViewGroup parent) {
-		final int fieldSizeInPx = 84;
+		final int fieldSizeInPx = 168;
 		if (convertView != null) {
 			return convertView;
 		}
@@ -66,9 +66,9 @@ public class ImageAdapter extends BaseAdapter {
 			ImageView imageView = new ImageView(mContext);
 			imageView.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-			// imageView.setPadding(8, 8, 8, 8);
-			// imageView.setImageResource(mThumbIds[position %
-			// mThumbIds.length]);
+			imageView.setPadding(8, 8, 8, 8);
+			imageView.setImageResource(mThumbIds[position %
+			 mThumbIds.length]);
 			return imageView;
 		}
 	}
