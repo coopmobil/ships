@@ -2,6 +2,7 @@ package org.coopmobil.ships.activities;
 
 import org.coopmobil.ships.R;
 import org.coopmobil.ships.adapter.ImageAdapter;
+import org.coopmobil.ships.views.GridCalculator;
 import org.coopmobil.ships.views.SpielfeldGridView;
 
 import android.app.Activity;
@@ -31,12 +32,11 @@ public class BattlefieldActivity extends Activity {
 
         
         SpielfeldGridView gridview = (SpielfeldGridView) findViewById(R.id.gridview);
+  
         gridview.setAdapter(new ImageAdapter(this));
-        gridview.setNumColumns(6);
+        gridview.setNumColumns(GridCalculator.getFieldCount() + 1);
 
         gridview.setOnItemClickListener(new OnItemClickListener() {
-        	
-        	
         	
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             	

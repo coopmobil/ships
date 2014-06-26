@@ -16,7 +16,8 @@
         android:numColumns="auto_fit"
         android:stretchMode="none"
         android:verticalSpacing="1dp"
-        custom:typ="platzierung" />
+        custom:typ="platzierung" >
+    </org.coopmobil.ships.views.SpielfeldGridView>
 
     <Button
         android:id="@+id/button_victory_ceremony"
