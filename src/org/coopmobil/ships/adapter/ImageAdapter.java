@@ -37,6 +37,7 @@ public class ImageAdapter extends BaseAdapter {
 	// create a new ImageView for each item referenced by the Adapter
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final int fieldSizeInPx = GridCalculator.getFieldSizePixel();
+		System.out.println("fieldSizeInPx= " + fieldSizeInPx);
 		if (convertView != null) {
 			return convertView;
 		}
@@ -95,6 +96,9 @@ public class ImageAdapter extends BaseAdapter {
 			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
 			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
 			R.drawable.sample_6, R.drawable.sample_7,
+			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
+			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
+			R.drawable.sample_6, R.drawable.sample_7, 
 			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
 			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
 			R.drawable.sample_6, R.drawable.sample_7, 

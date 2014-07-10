@@ -32,8 +32,8 @@ public class BattlefieldActivity extends Activity {
 
         
         SpielfeldGridView gridview = (SpielfeldGridView) findViewById(R.id.gridview);
-  
-        gridview.setAdapter(new ImageAdapter(this));
+               
+      //  gridview.setAdapter(new ImageAdapter(this));
         gridview.setNumColumns(GridCalculator.getFieldCount() + 1);
 
         gridview.setOnItemClickListener(new OnItemClickListener() {
