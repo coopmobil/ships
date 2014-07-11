@@ -1,7 +1,7 @@
 package org.coopmobil.ships.adapter;
 
 import org.coopmobil.ships.R;
-import org.coopmobil.ships.views.GridCalculator;
+import org.coopmobil.ships.views.SpielfeldGridView;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -15,15 +15,19 @@ import android.widget.TextView;
 
 public class ImageAdapter extends BaseAdapter {
 	private Context mContext;
-//	private int m = 6;
+	private SpielfeldGridView mSpielfedView;
 
-	public ImageAdapter(Context c) {
-		mContext = c;
+	// private int m = 6;
+
+	public ImageAdapter(SpielfeldGridView sfGV) {
+		mSpielfedView = sfGV;
+		mContext = mSpielfedView.getContext();
 	}
 
 	public int getCount() {
-		return (GridCalculator.getFieldCount()) * (GridCalculator.getFieldCount());
-	
+		return (mSpielfedView.getFieldCountPlus1())
+				* (mSpielfedView.getFieldCountPlus1());
+
 	}
 
 	public Object getItem(int position) {
@@ -36,41 +40,44 @@ public class ImageAdapter extends BaseAdapter {
 
 	// create a new ImageView for each item referenced by the Adapter
 	public View getView(int position, View convertView, ViewGroup parent) {
-		final int fieldSizeInPx = GridCalculator.getFieldSizePixel();
-		System.out.println("fieldSizeInPx= " + fieldSizeInPx);
+		final int fieldSizeInPx = mSpielfedView.getColumnWidth();
+
 		if (convertView != null) {
 			return convertView;
 		}
 
-		int y = position / (GridCalculator.getFieldCount() +1);
-		int x = position - y * (GridCalculator.getFieldCount() +1);
+		int y = position / (mSpielfedView.getFieldCountPlus1());
+		int x = position - y * (mSpielfedView.getFieldCountPlus1());
 		TextView tv;
 
 		if (x == 0 && y > 0) {
 			tv = getNewTextView((char) ('A' + (y - 1)));
 			tv.setBackgroundColor(Color.WHITE);
-			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
+			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx,
+					fieldSizeInPx));
 			return tv;
 		}
 		if (y == 0 && x > 0) {
 			tv = getNewTextView((char) ('1' + (x - 1)));
 			tv.setBackgroundColor(Color.WHITE);
-			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
+			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx,
+					fieldSizeInPx));
 			return tv;
 		}
 		if (x == 0 && y == 0) {
 			tv = getNewTextView((char) ' ');
-			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
+			tv.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx,
+					fieldSizeInPx));
 			tv.setBackgroundColor(Color.WHITE);
 			return tv;
 
 		} else {
 			ImageView imageView = new ImageView(mContext);
-			imageView.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx, fieldSizeInPx));
+			imageView.setLayoutParams(new GridView.LayoutParams(fieldSizeInPx,
+					fieldSizeInPx));
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 			imageView.setPadding(8, 8, 8, 8);
-			imageView.setImageResource(mThumbIds[position %
-			 mThumbIds.length]);
+			imageView.setImageResource(mThumbIds[position % mThumbIds.length]);
 			return imageView;
 		}
 	}
@@ -88,22 +95,22 @@ public class ImageAdapter extends BaseAdapter {
 	}
 
 	// references to our images
-	private Integer[] mThumbIds = {  R.drawable.sample_0, R.drawable.sample_1,R.drawable.sample_2, R.drawable.sample_3,
+	private Integer[] mThumbIds = { R.drawable.sample_0, R.drawable.sample_1,
+			R.drawable.sample_2, R.drawable.sample_3, R.drawable.sample_4,
+			R.drawable.sample_5, R.drawable.sample_6, R.drawable.sample_7,
+			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
+			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
+			R.drawable.sample_6, R.drawable.sample_7, R.drawable.sample_0,
+			R.drawable.sample_1, R.drawable.sample_2, R.drawable.sample_3,
 			R.drawable.sample_4, R.drawable.sample_5, R.drawable.sample_6,
 			R.drawable.sample_7, R.drawable.sample_0, R.drawable.sample_1,
 			R.drawable.sample_2, R.drawable.sample_3, R.drawable.sample_4,
 			R.drawable.sample_5, R.drawable.sample_6, R.drawable.sample_7,
 			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
 			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
-			R.drawable.sample_6, R.drawable.sample_7,
-			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
-			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
-			R.drawable.sample_6, R.drawable.sample_7, 
-			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
-			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
-			R.drawable.sample_6, R.drawable.sample_7, 
-			R.drawable.sample_0, R.drawable.sample_1, R.drawable.sample_2,
-			R.drawable.sample_3, R.drawable.sample_4, R.drawable.sample_5,
-			R.drawable.sample_6, R.drawable.sample_7};
+			R.drawable.sample_6, R.drawable.sample_7, R.drawable.sample_0,
+			R.drawable.sample_1, R.drawable.sample_2, R.drawable.sample_3,
+			R.drawable.sample_4, R.drawable.sample_5, R.drawable.sample_6,
+			R.drawable.sample_7 };
 
 }
